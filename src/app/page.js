@@ -11,7 +11,6 @@ import WhatWeDo from '@/components/WhatWeDo/WhatWeDo';
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-gray-900">
-      <Navbar />
       <Hero />
       <WhatWeDo />
       <AboutUs />
@@ -19,7 +18,6 @@ export default function Home() {
       <Portfolio />
       <Testimonials />
       <Contact />
-      <Footer />
     </main>
   );
 }
