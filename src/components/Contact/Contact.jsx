@@ -29,7 +29,7 @@ const formSchema = z.object({
 });
 
 export default function Contact() {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       fullName: "",
