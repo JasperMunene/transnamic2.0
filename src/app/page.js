@@ -4,7 +4,7 @@ import Hero from '@/components/Hero/Hero';
 import Marquee from '@/components/Marquee/Marquee';
 import Portfolio from '@/components/Portfolio/Portfolio';
 import Testimonials from '@/components/Testimonials/Testimonials';
-import Contact from '@/components/Contact/Contact';
+// import Contact from '@/components/Contact/Contact';
 import WhatWeDo from '@/components/WhatWeDo/WhatWeDo';
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
       <Marquee />
       <Portfolio />
       <Testimonials />
-      <Contact />
+      {/* <Contact /> */}
     </main>
   );
 }
