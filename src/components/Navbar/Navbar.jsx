@@ -106,7 +106,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'lg:hidden transition-all duration-300 ease-in-out border-t dark:border-gray-800',
+          'lg:hidden bg-white/90 dark:bg-gray-800/90 transition-all duration-300 ease-in-out border-t dark:border-gray-800',
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
         )}
       >
