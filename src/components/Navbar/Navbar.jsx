@@ -57,10 +57,10 @@ const Navbar = () => {
           <Link href="/" className="flex items-center group">
             <div className="relative w-30 h-30 transition-all duration-500 group-hover:scale-105">
               <Image
-                src="/logo.jpeg"
+                src="/logo.png"
                 alt="Company Logo"
                 fill
-                
+
                 className="object-contain drop-shadow-md"
                 priority
               />

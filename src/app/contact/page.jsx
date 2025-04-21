@@ -1,18 +1,19 @@
-// app/contact/page.tsx
+"use client";
 
 import React from 'react';
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-[#f1f6fc] px-4 py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#f1f6fc] dark:bg-gray-900 px-4 py-24 sm:px-6 lg:px-8">
+      {/* Added pt-24 to account for fixed navbar height */}
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#0e2a47] mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0e2a47] dark:text-white mb-4">
             Get in Touch
           </h1>
           <div className="w-20 h-1.5 mx-auto bg-red-600 rounded-full mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             We're here to assist you with all your logistics and construction needs. 
             Reach out to us through any of these channels or fill out the form below.
           </p>
@@ -21,12 +22,12 @@ const ContactPage = () => {
         {/* Contact Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {/* Location Card */}
-          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <div className="p-8">
               <div className="flex items-center mb-6">
-                <div className="bg-red-100 p-3 rounded-full mr-4">
+                <div className="bg-red-100 dark:bg-red-900/20 p-3 rounded-full mr-4">
                   <svg
-                    className="w-8 h-8 text-red-600"
+                    className="w-8 h-8 text-red-600 dark:text-red-400"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={2}
@@ -44,9 +45,9 @@ const ContactPage = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">Our Location</h3>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Our Location</h3>
               </div>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 2nd Floor Luqman Mlongo, Mombasa Rd.<br />
                 P.O. Box 76272 - 00508<br />
                 Nairobi, Kenya
@@ -55,7 +56,7 @@ const ContactPage = () => {
                 href="https://maps.google.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block mt-4 text-red-600 hover:text-red-800 font-medium"
+                className="inline-block mt-4 text-red-600 dark:text-red-400 hover:text-red-800 dark:hover:text-red-300 font-medium"
               >
                 View on Map →
               </a>
@@ -63,12 +64,12 @@ const ContactPage = () => {
           </div>
 
           {/* Phone Card */}
-          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <div className="p-8">
               <div className="flex items-center mb-6">
-                <div className="bg-red-100 p-3 rounded-full mr-4">
+                <div className="bg-red-100 dark:bg-red-900/20 p-3 rounded-full mr-4">
                   <svg
-                    className="w-8 h-8 text-red-600"
+                    className="w-8 h-8 text-red-600 dark:text-red-400"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={2}
@@ -81,17 +82,17 @@ const ContactPage = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">Phone Numbers</h3>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Phone Numbers</h3>
               </div>
-              <p className="text-gray-600 mb-2">
+              <p className="text-gray-600 dark:text-gray-300 mb-2">
                 <span className="font-medium">Main:</span> +254 721 150 988
               </p>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 <span className="font-medium">Alternate:</span> +254 725 631 164
               </p>
               <a 
                 href="tel:+254721150988" 
-                className="inline-block px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
+                className="inline-block px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors"
               >
                 Call Now
               </a>
@@ -99,12 +100,12 @@ const ContactPage = () => {
           </div>
 
           {/* Email Card */}
-          <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <div className="p-8">
               <div className="flex items-center mb-6">
-                <div className="bg-red-100 p-3 rounded-full mr-4">
+                <div className="bg-red-100 dark:bg-red-900/20 p-3 rounded-full mr-4">
                   <svg
-                    className="w-8 h-8 text-red-600"
+                    className="w-8 h-8 text-red-600 dark:text-red-400"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={2}
@@ -117,14 +118,14 @@ const ContactPage = () => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">Email Us</h3>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Email Us</h3>
               </div>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 For general inquiries, partnerships, or support questions.
               </p>
               <a 
                 href="mailto:info@company.com" 
-                className="inline-block px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
+                className="inline-block px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors"
               >
                 Send Email
               </a>
@@ -133,7 +134,7 @@ const ContactPage = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div className="bg-white rounded-xl shadow-md overflow-hidden max-w-4xl mx-auto">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden max-w-4xl mx-auto">
           <div className="md:flex">
             <div className="md:w-1/2 bg-red-600 p-8 text-white">
               <h2 className="text-2xl font-bold mb-4">Let's Talk About Your Project</h2>
@@ -158,7 +159,7 @@ const ContactPage = () => {
             <div className="md:w-1/2 p-8">
               <form className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     Full Name
                   </label>
                   <input
@@ -166,11 +167,11 @@ const ContactPage = () => {
                     id="name"
                     name="name"
                     required
-                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500"
+                    className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500 bg-white dark:bg-gray-700 dark:text-white"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     Email Address
                   </label>
                   <input
@@ -178,22 +179,22 @@ const ContactPage = () => {
                     id="email"
                     name="email"
                     required
-                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500"
+                    className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500 bg-white dark:bg-gray-700 dark:text-white"
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     Phone Number
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
-                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500"
+                    className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500 bg-white dark:bg-gray-700 dark:text-white"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                     Your Message
                   </label>
                   <textarea
@@ -201,7 +202,7 @@ const ContactPage = () => {
                     name="message"
                     rows={4}
                     required
-                    className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500"
+                    className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-red-500 focus:border-red-500 bg-white dark:bg-gray-700 dark:text-white"
                   ></textarea>
                 </div>
                 <div>

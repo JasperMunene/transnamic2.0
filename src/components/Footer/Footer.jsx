@@ -20,12 +20,16 @@ const services = [
 
 const contact = [
   { icon: Mail, text: "info@transnamic.co.ke" },
-  { icon: Phone, text: "+254 721 150 988\n" +
-        "\n" +
-        "+254 725 631 164" },
-  { icon: MapPin, text: "2nd floor Luqman Mlongo, Mombasa Rd.\n" +
-        "\n" +
-        "P.O. Box 76272 - 00508, Nairobi, Kenya" },
+  {
+    icon: Phone, text: "+254 721 150 988\n" +
+      "\n" +
+      "+254 725 631 164"
+  },
+  {
+    icon: MapPin, text: "2nd floor Luqman Mlongo, Mombasa Rd.\n" +
+      "\n" +
+      "P.O. Box 76272 - 00508, Nairobi, Kenya"
+  },
 ];
 
 const socialLinks = [
@@ -128,32 +132,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Newsletter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="border-t border-gray-800 py-8"
-        >
-          <div className="max-w-3xl mx-auto text-center">
-            <h4 className="text-xl font-semibold text-white mb-2">
-              Subscribe to Our Newsletter
-            </h4>
-            <p className="text-gray-400 mb-6">
-              Stay updated with our latest projects and industry insights
-            </p>
-            <form className="flex gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-red-500"
-              />
-              <Button className="bg-red-600 hover:bg-red-700">
-                Subscribe
-              </Button>
-            </form>
-          </div>
-        </motion.div>
+
 
         {/* Copyright */}
         <div className="border-t border-gray-800 py-8">
