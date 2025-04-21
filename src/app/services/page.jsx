@@ -3,79 +3,79 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Building2, Truck, Wrench, Users2, HardHat, Ruler, Plane as Crane, Factory, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Truck, Warehouse, Construction, LandPlot, Drill, HardHat, GraduationCap, Leaf, ArrowRight, CheckCircle2 } from "lucide-react";
 
 const services = [
   {
-    icon: Building2,
-    title: "Commercial Construction",
-    description: "Full-service commercial construction including office buildings, retail spaces, and industrial facilities.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070",
+    icon: Truck,
+    title: "Transport & Logistics",
+    description: "Modern transport solutions focused on large capacity, flexibility, and secure storage, handling and transport of goods.",
+    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1970",
     features: [
-      "Project Planning & Management",
-      "Design-Build Services",
-      "Cost Estimation",
-      "Quality Control"
+      "Road freight services",
+      "Water tank installation",
+      "Warehousing solutions",
+      "Timely and secure deliveries"
     ]
   },
   {
-    icon: Crane,
-    title: "Residential Development",
-    description: "Custom home construction and residential development projects with attention to detail and quality.",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070",
-    features: [
-      "Custom Home Design",
-      "Multi-Family Units",
-      "Renovation Services",
-      "Interior Finishing"
-    ]
-  },
-  {
-    icon: Factory,
-    title: "Industrial Construction",
-    description: "Specialized construction services for manufacturing facilities, warehouses, and industrial complexes.",
-    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=2070",
-    features: [
-      "Facility Design",
-      "Equipment Installation",
-      "Safety Compliance",
-      "Process Integration"
-    ]
-  },
-  {
-    icon: HardHat,
-    title: "Infrastructure Development",
-    description: "Critical infrastructure projects including roads, bridges, and public facilities.",
+    icon: Construction,
+    title: "Construction Services",
+    description: "Comprehensive construction solutions including land development and infrastructure projects.",
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070",
     features: [
-      "Transportation Systems",
-      "Public Facilities",
-      "Utility Networks",
-      "Environmental Compliance"
+      "Grading and leveling",
+      "Construction project management",
+      "Land surveying",
+      "Infrastructure development"
+    ]
+  },
+  {
+    icon: Drill,
+    title: "Equipment Leasing",
+    description: "Modern equipment for earthworks and construction projects with expert operators available.",
+    image: "https://images.unsplash.com/photo-1471513671800-b09c87e1497c?q=80&w=2070",
+    features: [
+      "Excavators and bulldozers",
+      "Tipper trucks and graders",
+      "Loaders and compactors",
+      "Dragline excavators"
+    ]
+  },
+  {
+    icon: Warehouse,
+    title: "Material Supply",
+    description: "High quality aggregates for construction projects from our quarries and manufacturing facilities.",
+    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2070",
+    features: [
+      "Quarry and river sand",
+      "Ballast and graded stones",
+      "Gravel and murram",
+      "Asphalt concrete"
     ]
   }
 ];
 
 const specialties = [
   {
-    icon: Ruler,
-    title: "Pre-Construction Planning",
-    description: "Comprehensive planning and analysis before breaking ground."
+    icon: LandPlot,
+    title: "Sinking Boreholes",
+    description: "Professional borehole drilling and water solutions"
   },
   {
-    icon: Users2,
-    title: "Project Management",
-    description: "Expert oversight throughout the entire construction process."
+    icon: HardHat,
+    title: "Earthworks",
+    description: "Excavation, drilling, back filling, and compaction services"
   },
   {
-    icon: Truck,
-    title: "Logistics & Supply Chain",
-    description: "Efficient material handling and supply chain management."
+    icon: GraduationCap,
+    title: "Education Support",
+    description: "Investing 1.5% of profits in engineering education"
   },
   {
-    icon: Wrench,
-    title: "Maintenance Services",
-    description: "Ongoing maintenance and facility management solutions."
+    icon: Leaf,
+    title: "Environment",
+    description: "1% of profits for tree planting and clean energy research"
   }
 ];
 
@@ -86,8 +86,8 @@ export default function Services() {
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071"
-            alt="Construction site"
+            src="https://images.unsplash.com/photo-1605152276897-4f618f831968?q=80&w=2070"
+            alt="Transport and logistics"
             fill
             className="object-cover"
           />
@@ -102,17 +102,17 @@ export default function Services() {
             className="max-w-3xl"
           >
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-              Comprehensive Construction Services
+              Transport, Logistics & Construction Solutions
             </h1>
             <p className="text-xl text-gray-200 mb-8">
-              From concept to completion, we deliver exceptional construction services 
-              tailored to your specific needs and requirements.
+              Transnamic Limited offers high-end products and services in transport and logistics, 
+              ensuring timely delivery, quality and integrity for all project sizes.
             </p>
             <Button 
               size="lg" 
               className="bg-red-600 hover:bg-red-700 text-lg h-12 px-8"
             >
-              Get Started
+              Contact Us
             </Button>
           </motion.div>
         </div>
@@ -137,8 +137,8 @@ export default function Services() {
               transition={{ delay: 0.1 }}
               className="text-xl text-gray-600 dark:text-gray-300"
             >
-              We offer a wide range of construction services to meet your needs, 
-              from commercial to residential projects.
+              We serve clients ranging from small private businesses to large Government 
+              and Non-Governmental projects with flexible operation systems.
             </motion.p>
           </div>
 
@@ -211,8 +211,84 @@ export default function Services() {
         </div>
       </section>
 
+      {/* CSR Section */}
+      <section className="py-24 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl font-bold text-gray-900 dark:text-white mb-6"
+            >
+              Our Corporate Social Responsibility
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-xl text-gray-600 dark:text-gray-300"
+            >
+              We maintain mutually trustworthy relations with stakeholders and invest in education and environment.
+            </motion.p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded-xl">
+                  <GraduationCap className="w-8 h-8 text-red-600 dark:text-red-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  Education
+                </h3>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                As an employer, we want to increase the talent pool from which we recruit that would also broadly help the economy.
+              </p>
+              <div className="bg-white dark:bg-gray-900 p-4 rounded-lg">
+                <p className="text-red-600 dark:text-red-400 font-semibold">
+                  Our commitment: Invest 1.5% of profits before tax towards students in engineering, architecture and environmental faculties.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded-xl">
+                  <Leaf className="w-8 h-8 text-red-600 dark:text-red-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  Environment
+                </h3>
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                As a consumer of fossil fuels, we are dedicated to conservation efforts and clean energy innovation.
+              </p>
+              <div className="bg-white dark:bg-gray-900 p-4 rounded-lg">
+                <p className="text-red-600 dark:text-red-400 font-semibold">
+                  Our commitment: 1% of profits for tree planting and 1% for clean energy vehicle research.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Specialties Section */}
-      <section className="py-24">
+      <section className="py-24 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <motion.h2
@@ -230,7 +306,7 @@ export default function Services() {
               transition={{ delay: 0.1 }}
               className="text-xl text-gray-600 dark:text-gray-300"
             >
-              Supporting services that ensure project success from start to finish.
+              Comprehensive solutions to meet all your transport, logistics and construction needs.
             </motion.p>
           </div>
 
@@ -269,16 +345,17 @@ export default function Services() {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Start Your Project?
+                Partner With Transnamic Limited
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Contact us today to discuss your construction needs and learn how we can help bring your vision to life.
+                Our unique and flexible operation systems ensure successful results for both service provider and client. 
+                We promote partnership to achieve mutual goals.
               </p>
               <Button 
                 size="lg"
                 className="bg-red-600 hover:bg-red-700 text-lg h-12 px-8"
               >
-                Get in Touch
+                Get Started
               </Button>
             </motion.div>
           </div>
