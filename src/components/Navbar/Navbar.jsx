@@ -6,16 +6,29 @@ import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown, Home, Info, Phone, Briefcase } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Switch } from '../Switch';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      
+      // Update active link based on scroll position
+      const sections = document.querySelectorAll('section');
+      let current = '';
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id') || '';
+        }
+      });
+      setActiveLink(current ? `/${current}` : '/');
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -32,25 +45,27 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        'z-50 fixed top-0 left-0 right-0 transition-all duration-300',
+        'z-50 fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl mx-auto transition-all duration-500 ease-out rounded-2xl',
         scrolled
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-lg'
-          : 'bg-transparent'
+          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border border-gray-100 dark:border-gray-800'
+          : 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-md border border-gray-50 dark:border-gray-700/50'
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
-          <div className="flex-shrink-0 flex items-center space-x-2">
-            <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center transform group-hover:rotate-6 transition-transform duration-300">
-                <span className="text-white font-bold text-xl">T</span>
-              </div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent hidden sm:block">
-                Transnamic
-              </h1>
-            </Link>
-          </div>
+          <Link href="/" className="flex items-center group">
+            <div className="relative w-30 h-30 transition-all duration-500 group-hover:scale-105">
+              <Image
+                src="/logo.jpeg"
+                alt="Company Logo"
+                fill
+                
+                className="object-contain drop-shadow-md"
+                priority
+              />
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
@@ -58,15 +73,26 @@ const Navbar = () => {
               <Link
                 key={link.label}
                 href={link.href}
-                className="relative px-5 py-2 text-gray-700 dark:text-gray-200 font-medium group rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-300"
+                className={cn(
+                  "relative px-5 py-2 font-medium group rounded-xl transition-all duration-300",
+                  activeLink === link.href 
+                    ? "text-red-600 dark:text-red-400"
+                    : "text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400"
+                )}
               >
                 <div className="flex items-center space-x-2">
-                  <link.icon className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <link.icon className={cn(
+                    "w-4 h-4 transition-all duration-300",
+                    activeLink === link.href 
+                      ? "opacity-100 scale-110"
+                      : "opacity-70 group-hover:opacity-100 group-hover:scale-110"
+                  )} />
                   <span className="relative">
-                    <span className="relative z-10 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">
-                      {link.label}
-                    </span>
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                    {link.label}
+                    <span className={cn(
+                      "absolute bottom-0 left-0 w-full h-0.5 bg-red-600 transition-all duration-500",
+                      activeLink === link.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    )}></span>
                   </span>
                 </div>
               </Link>
@@ -74,29 +100,30 @@ const Navbar = () => {
           </div>
 
           {/* Right Section */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-4">
             <Switch />
             <Button
               size="lg"
-              className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
+              className="relative overflow-hidden group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
             >
-              Get a quote
-              <ChevronDown className="ml-2 h-4 w-4" />
+              <span className="relative z-10">Get a quote</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <ChevronDown className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-y-1" />
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-4">
+          <div className="lg:hidden flex items-center space-x-3">
             <Switch />
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-red-600 transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition-all duration-300"
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6 transition-transform duration-300 rotate-180" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 transition-transform duration-300" />
               )}
             </button>
           </div>
@@ -106,26 +133,34 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'lg:hidden bg-white/90 dark:bg-gray-800/90 transition-all duration-300 ease-in-out border-t dark:border-gray-800',
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+          'lg:hidden bg-white/95 dark:bg-gray-800/95 backdrop-blur-md transition-all duration-500 ease-in-out overflow-hidden border-t border-gray-100 dark:border-gray-700 rounded-b-2xl',
+          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         )}
       >
-        <div className="px-4 py-3 space-y-3  shadow-lg border-b ">
+        <div className="px-4 py-3 space-y-2">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="flex items-center space-x-3 px-4 py-3 rounded-lg text-base font-medium text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200"
+              className={cn(
+                "flex items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300",
+                activeLink === link.href
+                  ? "text-red-600 dark:text-red-400 bg-gray-50 dark:bg-gray-700/50"
+                  : "text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-700/50"
+              )}
               onClick={() => setIsOpen(false)}
             >
-              <link.icon className="h-5 w-5 opacity-75" />
+              <link.icon className={cn(
+                "h-5 w-5 transition-all duration-300",
+                activeLink === link.href ? "scale-110" : "opacity-75"
+              )} />
               <span>{link.label}</span>
             </Link>
           ))}
-          <div className="pt-2">
+          <div className="pt-2 px-4 pb-4">
             <Button
               size="lg"
-              className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+              className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
             >
               Get a quote
             </Button>
