@@ -19,9 +19,13 @@ const services = [
 ];
 
 const contact = [
-  { icon: Mail, text: "contact@transnamic.com" },
-  { icon: Phone, text: "+1 (555) 123-4567" },
-  { icon: MapPin, text: "123 Construction Ave, Building City, ST 12345" },
+  { icon: Mail, text: "info@transnamic.co.ke" },
+  { icon: Phone, text: "+254 721 150 988\n" +
+        "\n" +
+        "+254 725 631 164" },
+  { icon: MapPin, text: "2nd floor Luqman Mlongo, Mombasa Rd.\n" +
+        "\n" +
+        "P.O. Box 76272 - 00508, Nairobi, Kenya" },
 ];
 
 const socialLinks = [
