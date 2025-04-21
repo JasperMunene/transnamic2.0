@@ -25,7 +25,7 @@ export default function Hero() {
             >
               <div className="flex items-center px-4 py-2 bg-red-50 dark:bg-red-900/20 rounded-full">
                 <p className="text-red-600 dark:text-red-400 font-semibold tracking-wider text-sm">
-                  CONSTRUCTION SOLUTION
+                  INTEGRATED SOLUTIONS
                 </p>
               </div>
             </motion.div>
@@ -36,8 +36,8 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl lg:text-6xl font-bold leading-tight text-gray-900 dark:text-gray-100"
             >
-              Building Tomorrow's
-              <span className="text-red-600 dark:text-red-500"> Infrastructure</span>
+              Unparalleled Service Delivery in
+              <span className="text-red-600 dark:text-red-500"> Equipment Leasing, Logistics & Construction</span>
             </motion.h1>
 
             <motion.p
@@ -46,7 +46,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed"
             >
-              Innovating logistics and construction solutions to power your business with precision, reliability, and excellence.
+              Our vision is to make Transnamic Logistics a key partner in integrated logistics and infrastructure in East and Central Africa, offering a higher quality of goods & service.
             </motion.p>
 
             <motion.div
