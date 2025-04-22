@@ -1,10 +1,10 @@
-import { Raleway } from "next/font/google";
+import { Oswald } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 
-const raleway = Raleway({
+const oswald = Oswald({
   subsets: ["latin"],
   weight: ["400"],
 });
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${raleway.className} antialiased`}
+          className={`${oswald.className} antialiased`}
         >
           <ThemeProvider
             attribute="class"

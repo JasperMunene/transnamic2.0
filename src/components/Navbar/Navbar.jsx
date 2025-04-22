@@ -1,7 +1,8 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown, Home, Info, Phone, Briefcase } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -11,26 +12,12 @@ import Image from 'next/image';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState('');
+  const pathname = usePathname();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-      
-      // Update active link based on scroll position
-      const sections = document.querySelectorAll('section');
-      let current = '';
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - 200) {
-          current = section.getAttribute('id') || '';
-        }
-      });
-      setActiveLink(current ? `/${current}` : '/');
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -55,12 +42,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
           <Link href="/" className="flex items-center group">
-            <div className="relative w-30 h-30 transition-all duration-500 group-hover:scale-105">
+            <div className="relative w-28 h-10 transition-all duration-500 group-hover:scale-105">
               <Image
                 src="/logo.png"
                 alt="Company Logo"
                 fill
-
                 className="object-contain drop-shadow-md"
                 priority
               />
@@ -69,34 +55,37 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className={cn(
-                  "relative px-5 py-2 font-medium group rounded-xl transition-all duration-300",
-                  activeLink === link.href 
-                    ? "text-red-600 dark:text-red-400"
-                    : "text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400"
-                )}
-              >
-                <div className="flex items-center space-x-2">
-                  <link.icon className={cn(
-                    "w-4 h-4 transition-all duration-300",
-                    activeLink === link.href 
-                      ? "opacity-100 scale-110"
-                      : "opacity-70 group-hover:opacity-100 group-hover:scale-110"
-                  )} />
-                  <span className="relative">
-                    {link.label}
-                    <span className={cn(
-                      "absolute bottom-0 left-0 w-full h-0.5 bg-red-600 transition-all duration-500",
-                      activeLink === link.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                    )}></span>
-                  </span>
-                </div>
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={cn(
+                    "relative px-5 py-2 font-medium group rounded-xl transition-all duration-300",
+                    isActive
+                      ? "text-red-600 dark:text-red-400"
+                      : "text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400"
+                  )}
+                >
+                  <div className="flex items-center space-x-2">
+                    <link.icon className={cn(
+                      "w-4 h-4 transition-all duration-300",
+                      isActive
+                        ? "opacity-100 scale-110"
+                        : "opacity-70 group-hover:opacity-100 group-hover:scale-110"
+                    )} />
+                    <span className="relative text-lg">
+                      {link.label}
+                      <span className={cn(
+                        "absolute -bottom-1 left-0 w-full h-0.5 bg-red-600 transform transition-transform duration-300",
+                        isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                      )}></span>
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
           {/* Right Section */}
@@ -107,7 +96,6 @@ const Navbar = () => {
               className="relative overflow-hidden group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
             >
               <span className="relative z-10">Get a quote</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               <ChevronDown className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-y-1" />
             </Button>
           </div>
@@ -117,14 +105,10 @@ const Navbar = () => {
             <Switch />
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition-all duration-300"
+              className="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition-all duration-300"
               aria-label="Toggle menu"
             >
-              {isOpen ? (
-                <X className="h-6 w-6 transition-transform duration-300 rotate-180" />
-              ) : (
-                <Menu className="h-6 w-6 transition-transform duration-300" />
-              )}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -138,25 +122,28 @@ const Navbar = () => {
         )}
       >
         <div className="px-4 py-3 space-y-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className={cn(
-                "flex items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300",
-                activeLink === link.href
-                  ? "text-red-600 dark:text-red-400 bg-gray-50 dark:bg-gray-700/50"
-                  : "text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-700/50"
-              )}
-              onClick={() => setIsOpen(false)}
-            >
-              <link.icon className={cn(
-                "h-5 w-5 transition-all duration-300",
-                activeLink === link.href ? "scale-110" : "opacity-75"
-              )} />
-              <span>{link.label}</span>
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={cn(
+                  "flex items-center space-x-3 px-4 py-3 rounded-xl text-base font-medium transition-all duration-300",
+                  isActive
+                    ? "text-red-600 dark:text-red-400 bg-gray-50 dark:bg-gray-700/50"
+                    : "text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                )}
+              >
+                <link.icon className={cn(
+                  "h-5 w-5 transition-all duration-300",
+                  isActive ? "scale-110" : "opacity-75"
+                )} />
+                <span>{link.label}</span>
+              </Link>
+            );
+          })}
           <div className="pt-2 px-4 pb-4">
             <Button
               size="lg"
