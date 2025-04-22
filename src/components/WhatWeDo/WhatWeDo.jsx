@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Truck, Warehouse, Construction, Drill, LandPlot, HardHat, Package, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Wrench } from "lucide-react";
 
 const services = [
   {
