@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Truck, Warehouse, Construction, LandPlot, Drill, HardHat, GraduationCap, Leaf, ArrowRight, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -11,6 +12,7 @@ const services = [
     title: "Transport & Logistics",
     description: "Modern transport solutions focused on large capacity, flexibility, and secure storage, handling and transport of goods.",
     image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1970",
+    slug: "transport-logistics",
     features: [
       "Road freight services",
       "Water tank installation",
@@ -23,6 +25,7 @@ const services = [
     title: "Construction Services",
     description: "Comprehensive construction solutions including land development and infrastructure projects.",
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070",
+    slug: "construction-management",
     features: [
       "Grading and leveling",
       "Construction project management",
@@ -35,6 +38,7 @@ const services = [
     title: "Equipment Leasing",
     description: "Modern equipment for earthworks and construction projects with expert operators available.",
     image: "https://images.unsplash.com/photo-1471513671800-b09c87e1497c?q=80&w=2070",
+    slug: "equipment-leasing",
     features: [
       "Excavators and bulldozers",
       "Tipper trucks and graders",
@@ -47,6 +51,7 @@ const services = [
     title: "Material Supply",
     description: "High quality aggregates for construction projects from our quarries and manufacturing facilities.",
     image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2070",
+    slug: "materials-supply",
     features: [
       "Quarry and river sand",
       "Ballast and graded stones",
@@ -177,13 +182,14 @@ export default function Services() {
                           </div>
                         ))}
                       </div>
-
+                      <Link href={`/services/${service.slug}`}>
                       <Button
                         className="group bg-red-600 hover:bg-red-700"
                       >
                         Learn More
                         <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                       </Button>
+                      </Link>
                     </div>
                   </div>
 
