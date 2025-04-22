@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { motion } from "framer-motion";
 import { Building2, Truck, Users2, Wrench } from "lucide-react";
@@ -7,59 +7,41 @@ import Image from "next/image";
 
 const services = [
   {
-    icon: Building2,
-    title: "Construction Management",
-    description: "Expert oversight of construction projects from planning to completion, ensuring quality and efficiency.",
+    icon: Truck,
+    title: "Transport & Logistics",
+    description: "Transmatic Limited is a modern transport company focused on our customers' wishes and needs for large capacity and flexibility, as well as the secure storage, handling and transport of goods.",
     color: "bg-blue-50 dark:bg-blue-900/20",
     textColor: "text-blue-600 dark:text-blue-400",
     borderColor: "border-blue-100 dark:border-blue-800/30",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070"
-  },
-  {
-    icon: Truck,
-    title: "Logistics Solutions",
-    description: "Comprehensive logistics services including transportation, warehousing, and supply chain management.",
-    color: "bg-red-50 dark:bg-red-900/20",
-    textColor: "text-red-600 dark:text-red-400",
-    borderColor: "border-red-100 dark:border-red-800/30",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070"
+    image: "/truck2.jpg"
   },
   {
     icon: Wrench,
-    title: "Equipment Management",
-    description: "Full-service equipment maintenance, repair, and optimization for maximum operational efficiency.",
-    color: "bg-green-50 dark:bg-green-900/20",
-    textColor: "text-green-600 dark:text-green-400",
-    borderColor: "border-green-100 dark:border-green-800/30",
-    image: "https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?q=80&w=2070"
+    title: "Equipment Leasing",
+    description: "We have invested in modern equipment for use in earthworks (excavation, drilling, carting away, back filling, leveling and compaction) and construction aids.",
+    color: "bg-red-50 dark:bg-red-900/20",
+    textColor: "text-red-600 dark:text-red-400",
+    borderColor: "border-red-100 dark:border-red-800/30",
+    image: "https://images.unsplash.com/photo-1584192436700-b7edfb0ea88f?q=80&w=2070"
   },
   {
     icon: Users2,
-    title: "Consulting Services",
-    description: "Strategic consulting to help businesses optimize their construction and logistics operations.",
-    color: "bg-purple-50 dark:bg-purple-900/20",
-    textColor: "text-purple-600 dark:text-purple-400",
-    borderColor: "border-purple-100 dark:border-purple-800/30",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070"
+    title: "Materials Supply",
+    description: "Transmatic are leaders in the quarrying and manufacturing of aggregates for use in ready‑mix concrete, pre‑cast concrete and asphalt production. We produce high quality aggregates.",
+    color: "bg-green-50 dark:bg-green-900/20",
+    textColor: "text-green-600 dark:text-green-400",
+    borderColor: "border-green-100 dark:border-green-800/30",
+    image: "https://images.unsplash.com/photo-1617707628145-8dfaf1678fa9?q=80&w=2070"
   }
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
+  visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
 };
-
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1
-  }
+  visible: { y: 0, opacity: 1 }
 };
 
 export default function WhatWeDo() {
@@ -77,15 +59,15 @@ export default function WhatWeDo() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-red-600 dark:text-red-400 font-semibold tracking-wider mb-4"
+            className="text-red-600 dark:text-red-400 font-semibold tracking-wide mb-4 text-lg"
           >
-            [ OUR SERVICES ]
+            OUR SERVICES
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6"
+            className="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-gray-100 mb-6"
           >
             What We Do
           </motion.h2>
@@ -93,10 +75,9 @@ export default function WhatWeDo() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl text-gray-600 dark:text-gray-300"
+            className="text-lg lg:text-2xl text-gray-600 dark:text-gray-300"
           >
-            We provide comprehensive solutions for construction and logistics needs,
-            delivering excellence through innovation and expertise.
+            We provide comprehensive solutions for construction and logistics needs, delivering excellence through innovation and expertise.
           </motion.p>
         </div>
 
@@ -105,36 +86,42 @@ export default function WhatWeDo() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
         >
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div
               key={service.title}
               variants={itemVariants}
-              className={`relative group p-8 rounded-2xl border-2 ${service.borderColor} hover:border-opacity-50 transition-all duration-300`}
+              className={`
+                relative group p-6 rounded-2xl border-2 ${service.borderColor}
+                hover:shadow-2xl hover:-translate-y-2 transition-all duration-300
+              `}
             >
-              <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden">
+              <div className="relative w-full h-56 mb-6 rounded-xl overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className={`absolute inset-0 ${service.color} mix-blend-multiply opacity-40`} />
+                <div className={`${service.color} mix-blend-multiply opacity-30`} />
               </div>
-              <div className={`${service.color} p-3 rounded-xl w-fit -mt-16 relative z-10 shadow-lg`}>
-                <service.icon className={`w-8 h-8 ${service.textColor}`} />
+
+              <div className={`${service.color} p-3 rounded-full w-fit -mt-16 relative z-10 shadow-md`}>
+                <service.icon className={`w-6 h-6 ${service.textColor}`} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-6 mb-4">
+
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-4 mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
                 {service.description}
               </p>
-              <div className="absolute bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg">
+
+              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Button
                   variant="ghost"
-                  className={`${service.textColor} hover:bg-transparent p-0 h-auto font-semibold`}
+                  className={`${service.textColor} hover:bg-transparent font-medium`}
                 >
                   Learn more →
                 </Button>
@@ -147,14 +134,8 @@ export default function WhatWeDo() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-16 text-center"
+          className="mt-12 text-center"
         >
-          <Button
-            size="lg"
-            className="bg-red-600 hover:bg-red-700 text-lg h-12 px-8"
-          >
-            View All Services
-          </Button>
         </motion.div>
       </div>
     </section>
