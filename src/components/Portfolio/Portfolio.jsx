@@ -21,7 +21,7 @@ const projects = [
     location: "Nairobi Eastern Corridor",
     scope: "Major Road Development",
     description: "This high-capacity bypass connects key industrial zones with the city, easing traffic congestion and promoting logistics.",
-    image: ""
+    image: "/pass.jpeg"
   },
   {
     id: "03",
@@ -29,7 +29,7 @@ const projects = [
     location: "Mombasa",
     scope: "Transport & Economic Hub",
     description: "A multi-modal transport corridor designed to open up Mombasa’s south coast for trade and tourism with modern infrastructure.",
-    image: "/Dongo.jpeg"
+    image: "/Dongo.jpg"
   },
   {
     id: "04",

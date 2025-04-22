@@ -27,7 +27,7 @@ const projects = [
     description: "Large-scale bypass construction to ease Mombasa traffic congestion.",
     location: "Dongo Kundu, Mombasa",
     date: "2023",
-    image: "/Dongo.jpeg",
+    image: "/Dongo.jpg",
     category: "Bypass Construction"
   },
   {

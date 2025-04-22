@@ -5,6 +5,8 @@ import { Truck, Warehouse, Construction, Drill, LandPlot, HardHat, Package, Arro
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { Wrench } from "lucide-react";
+import { Users2 } from "lucide-react";
 
 const services = [
   {
