@@ -3,7 +3,6 @@ import AboutUs from './about/page';
 import Hero from '@/components/Hero/Hero';
 import Marquee from '@/components/Marquee/Marquee';
 import Portfolio from '@/components/Portfolio/Portfolio';
-import Testimonials from '@/components/Testimonials/Testimonials';
 import WhatWeDo from '@/components/WhatWeDo/WhatWeDo';
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
       <AboutUs />
       <Marquee />
       <Portfolio />
-      <Testimonials />
     
       
     </main>

@@ -8,27 +8,35 @@ import { MapPin, ArrowRight } from "lucide-react";
 const projects = [
   {
     id: "01",
-    title: "Greenwood Estates",
-    location: "Downtown City Center",
-    scope: "Office Complex Development",
-    description: "Nestled in a tranquil, tree-lined setting, this estate offers elegant homes crafted with sustainability and comfort in mind.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070"
+    title: "Dagoretti Corner Project",
+    location: "Dagoretti, Nairobi",
+    scope: "Urban Infrastructure Upgrade",
+    description: "A strategic project enhancing connectivity, drainage, and road networks around Dagoretti to support urban growth.",
+    image: "https://imgs.search.brave.com/TD83rwOJpos4CqtoHID_JEF7K88DQ86AYFyvgKrHCj0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y29uc3RydWN0aW9u/a2VueWEuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE3LzA5/L2NvbnN0cnVjdGlv/bi5qcGc_eDg5OTE2"
   },
   {
     id: "02",
-    title: "Harbor View Condominiums",
-    location: "Coastal Area",
-    scope: "Luxury Condominium Development",
-    description: "These luxury condominiums architectural design with comfort and convenience. Featuring layouts, high-end finishes.",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070"
+    title: "Eastern Bypass Construction",
+    location: "Nairobi Eastern Corridor",
+    scope: "Major Road Development",
+    description: "This high-capacity bypass connects key industrial zones with the city, easing traffic congestion and promoting logistics.",
+    image: ""
   },
   {
     id: "03",
-    title: "Healthcare Innovation Center",
-    location: "Medical District",
-    scope: "Healthcare Infrastructure",
-    description: "Cutting-edge medical facility with specialized treatment centers, research laboratories, and advanced medical equipment installation.",
-    image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=2070"
+    title: "Dongo Kundu Project",
+    location: "Mombasa",
+    scope: "Transport & Economic Hub",
+    description: "A multi-modal transport corridor designed to open up Mombasa’s south coast for trade and tourism with modern infrastructure.",
+    image: "/Dongo.jpeg"
+  },
+  {
+    id: "04",
+    title: "Kwa Jomvu A109 Construction",
+    location: "Jomvu, Mombasa County",
+    scope: "Highway Expansion Project",
+    description: "A critical upgrade to the A109 highway facilitating efficient cargo movement between Mombasa port and inland destinations.",
+    image: "https://imgs.search.brave.com/PgxuIva2m6bNXDVyKhkLcKGPTaxhUTRHtamAbnWCr4A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb25z/dHJ1Y3Rpb25yZXZp/ZXdvbmxpbmUuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI0/LzAxL0t3YS1Kb212/dS1NYXJpYWthbmkt/Um9hZC1Qcm9qZWN0/LmpwZw"
   }
 ];
 
@@ -142,15 +150,6 @@ export default function Portfolio() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-32 text-center"
-        >
-        </motion.div>
       </div>
     </section>
   );

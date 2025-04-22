@@ -55,7 +55,7 @@ export default function AboutPage() {
               className="relative"
             >
               <Image
-                src="/about-image.jpg"
+                src="/peaky.jpeg"
                 alt="Transnamic Team"
                 width={800}
                 height={600}

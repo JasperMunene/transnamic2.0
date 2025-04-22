@@ -1,46 +1,50 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Truck, Users2, Wrench } from "lucide-react";
+import { Truck, Warehouse, Construction, Drill, LandPlot, HardHat, Package, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const services = [
   {
-    icon: Building2,
-    title: "Construction Management",
-    description: "Expert oversight of construction projects from planning to completion, ensuring quality and efficiency.",
+    icon: Truck,
+    title: "Transport & Logistics",
+    description: "Modern transport solutions focused on large capacity, flexibility, and secure storage and handling of goods.",
     color: "bg-blue-50 dark:bg-blue-900/20",
     textColor: "text-blue-600 dark:text-blue-400",
     borderColor: "border-blue-100 dark:border-blue-800/30",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070"
+    features: ["Road freight", "Water tank installation", "Warehousing"],
+    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1970"
   },
   {
-    icon: Truck,
-    title: "Logistics Solutions",
-    description: "Comprehensive logistics services including transportation, warehousing, and supply chain management.",
+    icon: Construction,
+    title: "Construction Services",
+    description: "Comprehensive construction solutions including infrastructure and land development projects.",
     color: "bg-red-50 dark:bg-red-900/20",
     textColor: "text-red-600 dark:text-red-400",
     borderColor: "border-red-100 dark:border-red-800/30",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070"
+    features: ["Grading", "Construction", "Land surveying"],
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070"
   },
   {
-    icon: Wrench,
-    title: "Equipment Management",
-    description: "Full-service equipment maintenance, repair, and optimization for maximum operational efficiency.",
+    icon: Drill,
+    title: "Equipment Leasing",
+    description: "Modern equipment for earthworks and construction projects with expert operators available.",
     color: "bg-green-50 dark:bg-green-900/20",
     textColor: "text-green-600 dark:text-green-400",
     borderColor: "border-green-100 dark:border-green-800/30",
-    image: "https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?q=80&w=2070"
+    features: ["Excavators", "Bulldozers", "Tipper Trucks"],
+    image: "https://images.unsplash.com/photo-1471513671800-b09c87e1497c?q=80&w=2070"
   },
   {
-    icon: Users2,
-    title: "Consulting Services",
-    description: "Strategic consulting to help businesses optimize their construction and logistics operations.",
+    icon: Package,
+    title: "Material Supply",
+    description: "High quality aggregates for construction projects from our quarries and manufacturing facilities.",
     color: "bg-purple-50 dark:bg-purple-900/20",
     textColor: "text-purple-600 dark:text-purple-400",
     borderColor: "border-purple-100 dark:border-purple-800/30",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070"
+    features: ["Quarry Sand", "Ballast", "Asphalt Concrete"],
+    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2070"
   }
 ];
 
@@ -72,14 +76,14 @@ export default function WhatWeDo() {
       </div>
 
       <div className="container mx-auto px-4 relative">
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-4xl mx-auto text-center mb-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-red-600 dark:text-red-400 font-semibold tracking-wider mb-4"
           >
-            [ OUR SERVICES ]
+            OUR SERVICES
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -87,7 +91,7 @@ export default function WhatWeDo() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6"
           >
-            What We Do
+            Transnamic Solutions
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -95,8 +99,8 @@ export default function WhatWeDo() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-2xl text-gray-600 dark:text-gray-300"
           >
-            We provide comprehensive solutions for construction and logistics needs,
-            delivering excellence through innovation and expertise.
+            High-end transport, logistics, and construction services ensuring timely delivery, 
+            quality and integrity for all project sizes.
           </motion.p>
         </div>
 
@@ -111,7 +115,7 @@ export default function WhatWeDo() {
             <motion.div
               key={service.title}
               variants={itemVariants}
-              className={`relative group p-8 rounded-2xl border-2 ${service.borderColor} hover:border-opacity-50 transition-all duration-300`}
+              className={`relative group p-8 rounded-2xl border-2 ${service.borderColor} hover:border-opacity-50 transition-all duration-300 bg-white dark:bg-gray-800`}
             >
               <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden">
                 <Image
@@ -128,9 +132,17 @@ export default function WhatWeDo() {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-6 mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 text-lg">
+              <p className="text-gray-600 dark:text-gray-300 mb-4 text-lg">
                 {service.description}
               </p>
+              <ul className="mb-6 space-y-2">
+                {service.features.map((feature) => (
+                  <li key={feature} className="flex items-center">
+                    <ArrowRight className={`w-4 h-4 mr-2 ${service.textColor}`} />
+                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
               <div className="absolute bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg">
                 <Button
                   variant="ghost"
