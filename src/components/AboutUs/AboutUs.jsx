@@ -56,7 +56,7 @@ export default function AboutUs() {
           >
             <div className="relative z-10 rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070"
+                src="/truck2.jpg"
                 alt="Construction team"
                 width={800}
                 height={600}
