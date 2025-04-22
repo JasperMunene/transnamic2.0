@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Trophy, Users2, Building, Target, Eye, BarChart2, Heart, Shield, Handshake } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -19,7 +20,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center px-4 py-2 bg-red-50 dark:bg-red-900/20 rounded-full mb-6"
             >
-              <p className="text-red-600 dark:text-red-400 font-semibold tracking-wider">
+              <p className="text-red-600 dark:text-red-400 font-semibold tracking-wider text-xl">
                 ABOUT US
               </p>
             </motion.div>
@@ -63,8 +64,8 @@ export default function AboutPage() {
               />
               <div className="absolute -bottom-8 -right-8 bg-red-600 text-white p-6 rounded-xl shadow-lg max-w-xs">
                 <Building className="w-10 h-10 mb-3" />
-                <p className="text-2xl font-bold">3+</p>
-                <p className="text-sm">Years in Operation</p>
+                <p className="text-3xl font-bold">3+</p>
+                <p className="">Years in Operation</p>
               </div>
             </motion.div>
 
@@ -76,14 +77,14 @@ export default function AboutPage() {
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-1 w-12 bg-red-600" />
-                <p className="text-red-600 font-semibold tracking-wider">
+                <p className="text-red-600 font-semibold tracking-wider text-xl">
                   OUR STORY
                 </p>
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
                 About Transnamic
               </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
                 Established in October 2020, Transnamic Limited leverages our founders' experience in the transport and logistics industry and construction material. We combine the service and goods offered with technological innovation to provide flexible, timely and unique solutions.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -91,25 +92,25 @@ export default function AboutPage() {
                   <div className="bg-red-100 dark:bg-red-900/20 p-2 rounded-lg">
                     <Target className="w-5 h-5 text-red-600 dark:text-red-400" />
                   </div>
-                  <span className="text-gray-700 dark:text-gray-300">Innovative Solutions</span>
+                  <span className="text-gray-700 text-lg dark:text-gray-300">Innovative Solutions</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="bg-red-100 dark:bg-red-900/20 p-2 rounded-lg">
                     <BarChart2 className="w-5 h-5 text-red-600 dark:text-red-400" />
                   </div>
-                  <span className="text-gray-700 dark:text-gray-300">Industry Experience</span>
+                  <span className="text-gray-700 text-lg dark:text-gray-300">Industry Experience</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="bg-red-100 dark:bg-red-900/20 p-2 rounded-lg">
                     <Users2 className="w-5 h-5 text-red-600 dark:text-red-400" />
                   </div>
-                  <span className="text-gray-700 dark:text-gray-300">Client Focused</span>
+                  <span className="text-gray-700 text-lg dark:text-gray-300">Client Focused</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="bg-red-100 dark:bg-red-900/20 p-2 rounded-lg">
                     <CheckCircle2 className="w-5 h-5 text-red-600 dark:text-red-400" />
                   </div>
-                  <span className="text-gray-700 dark:text-gray-300">Quality Assurance</span>
+                  <span className="text-gray-700 text-lg dark:text-gray-300">Quality Assurance</span>
                 </div>
               </div>
             </motion.div>
@@ -123,12 +124,12 @@ export default function AboutPage() {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="h-1 w-12 bg-red-600" />
-              <p className="text-red-600 font-semibold tracking-wider">
+              <p className="text-red-600 font-semibold tracking-wider text-lg">
                 VISION & MISSION
               </p>
               <div className="h-1 w-12 bg-red-600" />
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-5xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               Our Purpose
             </h2>
           </div>
@@ -144,8 +145,8 @@ export default function AboutPage() {
               <div className="bg-red-100 dark:bg-red-900/20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Eye className="w-8 h-8 text-red-600 dark:text-red-400" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Vision</h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Our Vision</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-xl">
                 To make Transnamic Logistics a key partner in integrated logistics and infrastructure in East and Central Africa, offering a higher quality of goods & service.
               </p>
             </motion.div>
@@ -160,8 +161,8 @@ export default function AboutPage() {
               <div className="bg-red-100 dark:bg-red-900/20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Target className="w-8 h-8 text-red-600 dark:text-red-400" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Mission</h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Our Mission</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-xl">
                 Combining our service and goods with technological innovation to offer flexible, timely and unique solutions to our clients across East and Central Africa.
               </p>
             </motion.div>
@@ -175,26 +176,26 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-4 mb-6">
               <div className="h-1 w-12 bg-red-600" />
-              <p className="text-red-600 font-semibold tracking-wider">
+              <p className="text-red-600 font-semibold tracking-wider text-lg">
                 OUR AIM & OBJECTIVE
               </p>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-5xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               Our Goals
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-2xl text-gray-600 dark:text-gray-300 mb-8">
               Our aim is to exceed the expectations of our customers through total quality management.
             </p>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-gray-50 dark:bg-gray-700/50 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Primary Objective</h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Primary Objective</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-lg">
                   To provide cost effective and reliable solutions to help our customers realize their goals.
                 </p>
               </div>
               <div className="bg-gray-50 dark:bg-gray-700/50 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Key Focus Areas</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Key Focus Areas</h3>
                 <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-red-600 dark:text-red-400 mt-0.5 flex-shrink-0" />
@@ -221,12 +222,12 @@ export default function AboutPage() {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="h-1 w-12 bg-red-600" />
-              <p className="text-red-600 font-semibold tracking-wider">
+              <p className="text-red-600 font-semibold tracking-wider text-lg">
                 CORE VALUES
               </p>
               <div className="h-1 w-12 bg-red-600" />
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-5xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
               What Guides Us
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -278,8 +279,8 @@ export default function AboutPage() {
                 <div className="bg-red-100 dark:bg-red-900/20 w-14 h-14 rounded-full flex items-center justify-center mb-6">
                   <value.icon className="w-6 h-6 text-red-600 dark:text-red-400" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{value.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{value.description}</p>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{value.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-lg">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -294,7 +295,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl lg:text-4xl font-bold mb-6"
+            className="text-5xl lg:text-4xl font-bold mb-6"
           >
             Partner With Us
           </motion.h2>
@@ -303,7 +304,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl mb-8 max-w-3xl mx-auto"
+            className="text-2xl mb-8 max-w-3xl mx-auto"
           >
             Discover how Transnamic's innovative solutions can benefit your next project.
           </motion.p>
@@ -318,7 +319,9 @@ export default function AboutPage() {
               variant="outline"
               className="bg-transparent hover:bg-white/10 border-white text-white hover:text-white text-lg h-12 px-8"
             >
-              Contact Our Team
+             <Link href="/contact">
+             Contact Our Team
+             </Link>
             </Button>
           </motion.div>
         </div>

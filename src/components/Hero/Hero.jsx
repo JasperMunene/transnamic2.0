@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const features = [
   "24/7 Support Available",
@@ -24,7 +25,7 @@ export default function Hero() {
               className="flex items-center gap-4"
             >
               <div className="flex items-center px-4 py-2 bg-red-50 dark:bg-red-900/20 rounded-full">
-                <p className="text-red-600 dark:text-red-400 font-semibold tracking-wider text-sm">
+                <p className="text-red-600 dark:text-red-400 font-semibold tracking-wider">
                   INTEGRATED SOLUTIONS
                 </p>
               </div>
@@ -44,7 +45,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed"
+              className="text-2xl text-gray-600 dark:text-gray-300 leading-relaxed"
             >
               Our vision is to make Transnamic Logistics a key partner in integrated logistics and infrastructure in East and Central Africa, offering a higher quality of goods & service.
             </motion.p>
@@ -55,15 +56,19 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-lg h-12 px-8">
+              <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 text-lg h-12 px-8">
+                <Link href="/contact">
                 Get Started
+                </Link>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
                 className="group border-red-200 dark:border-red-800/30 hover:bg-red-50 dark:hover:bg-red-900/20 text-lg h-12"
               >
-                Learn more 
+                <Link href="/about">
+                Learn More
+                </Link>
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </motion.div>
@@ -80,7 +85,7 @@ export default function Hero() {
                   className="flex items-center gap-2 text-gray-600 dark:text-gray-300"
                 >
                   <CheckCircle2 className="h-5 w-5 text-red-600 dark:text-red-500" />
-                  <span className="text-sm font-medium">{feature}</span>
+                  <span className="text-xl font-medium">{feature}</span>
                 </div>
               ))}
             </motion.div>
