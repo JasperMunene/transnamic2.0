@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { MapPin, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const projects = [
   {
@@ -119,13 +120,15 @@ export default function Portfolio() {
                       {project.description}
                     </p>
 
-                    <Button
-                      size="lg"
-                      className="group bg-red-600 hover:bg-red-700"
-                    >
-                      See Details
-                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                    </Button>
+                    <Link href={`/portfolio/${project.id}`}>
+                      <Button
+                        size="lg"
+                        className="group bg-red-600 hover:bg-red-700"
+                      >
+                        See Details
+                        <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 

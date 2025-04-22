@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Truck, Warehouse, Construction, Drill, LandPlot, HardHat, Package, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Wrench } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -14,7 +14,8 @@ const services = [
     color: "bg-blue-50 dark:bg-blue-900/20",
     textColor: "text-blue-600 dark:text-blue-400",
     borderColor: "border-blue-100 dark:border-blue-800/30",
-    image: "/truck2.jpg"
+    image: "/truck2.jpg",
+    slug: "transport-logistics"
   },
   {
     icon: Wrench,
@@ -23,7 +24,8 @@ const services = [
     color: "bg-red-50 dark:bg-red-900/20",
     textColor: "text-red-600 dark:text-red-400",
     borderColor: "border-red-100 dark:border-red-800/30",
-    image: "https://images.unsplash.com/photo-1584192436700-b7edfb0ea88f?q=80&w=2070"
+    image: "https://images.unsplash.com/photo-1584192436700-b7edfb0ea88f?q=80&w=2070",
+    slug: "equipment-leasing"
   },
   {
     icon: Users2,
@@ -32,7 +34,8 @@ const services = [
     color: "bg-green-50 dark:bg-green-900/20",
     textColor: "text-green-600 dark:text-green-400",
     borderColor: "border-green-100 dark:border-green-800/30",
-    image: "https://images.unsplash.com/photo-1617707628145-8dfaf1678fa9?q=80&w=2070"
+    image: "https://images.unsplash.com/photo-1617707628145-8dfaf1678fa9?q=80&w=2070",
+    slug: "materials-supply"
   }
 ];
 
@@ -119,13 +122,15 @@ export default function WhatWeDo() {
                 {service.description}
               </p>
 
-              <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Button
-                  variant="ghost"
-                  className={`${service.textColor} hover:bg-transparent font-medium`}
-                >
-                  Learn more →
-                </Button>
+              <div className="absolute bottom-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <Link href={`/services/${service.slug}`}>
+                  <Button
+                    variant="ghost"
+                    className={`${service.textColor} hover:bg-transparent p-0 h-auto font-semibold`}
+                  >
+                    Learn more →
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           ))}
