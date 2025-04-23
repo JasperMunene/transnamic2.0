@@ -145,12 +145,14 @@ const Navbar = () => {
             );
           })}
           <div className="pt-2 px-4 pb-4">
-            <Button
-              size="lg"
-              className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
-            >
-              Get a quote
-            </Button>
+            <Link href="/quote" passHref>
+              <Button
+                size="lg"
+                className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
+              >
+                Get a Quote
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
