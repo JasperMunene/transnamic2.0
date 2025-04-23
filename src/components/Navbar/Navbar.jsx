@@ -90,7 +90,7 @@ const Navbar = () => {
 
           {/* Right Section */}
           <div className="hidden lg:flex items-center space-x-4">
-            {/* <Switch /> */}
+            <Switch />
             <Button
               size="lg"
               className="relative overflow-hidden group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
@@ -102,7 +102,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center space-x-3">
-            {/* <Switch /> */}
+            <Switch />
             <button
               onClick={toggleMenu}
               className="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none transition-all duration-300"
