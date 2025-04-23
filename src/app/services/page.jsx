@@ -11,7 +11,7 @@ const services = [
     icon: Truck,
     title: "Transport & Logistics",
     description: "Modern transport solutions focused on large capacity, flexibility, and secure storage, handling and transport of goods.",
-    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1970",
+    image: "/Quester.jpeg",
     slug: "transport-logistics",
     features: [
       "Road freight services",
@@ -37,7 +37,7 @@ const services = [
     icon: Drill,
     title: "Equipment Leasing",
     description: "Modern equipment for earthworks and construction projects with expert operators available.",
-    image: "https://images.unsplash.com/photo-1471513671800-b09c87e1497c?q=80&w=2070",
+    image: "/leasing.jpeg",
     slug: "equipment-leasing",
     features: [
       "Excavators and bulldozers",
@@ -50,7 +50,7 @@ const services = [
     icon: Warehouse,
     title: "Material Supply",
     description: "High quality aggregates for construction projects from our quarries and manufacturing facilities.",
-    image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=2070",
+    image: "/sand.jpeg",
     slug: "materials-supply",
     features: [
       "Quarry and river sand",

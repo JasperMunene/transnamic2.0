@@ -1,10 +1,12 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Building2, Truck, Users2, Wrench } from "lucide-react";
+import { Truck, Warehouse, Construction, Drill, LandPlot, HardHat, Package, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { Wrench } from "lucide-react";
+import { Users2 } from "lucide-react";
 
 const services = [
   {
@@ -58,7 +60,7 @@ export default function WhatWeDo() {
       </div>
 
       <div className="container mx-auto px-4 relative">
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-4xl mx-auto text-center mb-20">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -73,7 +75,7 @@ export default function WhatWeDo() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-gray-100 mb-6"
           >
-            What We Do
+            Transnamic Solutions
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
