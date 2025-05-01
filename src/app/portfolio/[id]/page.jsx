@@ -123,11 +123,51 @@ const projects = {
         description: "Maintained adjacent facility operations during construction."
       }
     ]
-  }
+  },
+  "04": {
+  "id": "04",
+  "title": "Harbor View Logistics Hub",
+  "location": "Coastal Area",
+  "scope": "Integrated Coastal Logistics Infrastructure",
+  "description": "A state-of-the-art logistics hub designed to streamline coastal import/export operations. It includes smart warehousing, efficient container handling systems, and real-time inventory management.",
+  "completionDate": "2024",
+  "clientName": "Coastal Freight Solutions",
+  "value": "$65M",
+  "duration": "24 months",
+  "image": "https://images.unsplash.com/photo-1573497491208-6b1acb260507?q=80&w=2070&auto=format",
+  "gallery": [
+    "https://images.unsplash.com/photo-1573497491208-6b1acb260507?q=80&w=2070&auto=format",  // warehouse and logistics
+    "https://images.unsplash.com/photo-1581090700227-1e8e109d79f5?q=80&w=2070&auto=format",  // shipping containers
+    "https://images.unsplash.com/photo-1618005198919-d3d4b5a92b2b?q=80&w=2070&auto=format"   // container terminal with cranes
+  ],
+  "features": [
+    "Smart Inventory Tracking",
+    "Automated Container Handling",
+    "Cold Storage Facilities",
+    "Real-Time Freight Monitoring",
+    "Secure Perimeter Access",
+    "Customs Clearance Integration"
+  ],
+  "challenges": [
+    {
+      "title": "Regulatory Compliance",
+      "description": "Worked closely with port and maritime authorities to ensure compliance with international shipping standards."
+    },
+    {
+      "title": "Unpredictable Coastal Weather",
+      "description": "Developed resilient infrastructure to handle operational disruptions due to weather."
+    },
+    {
+      "title": "Technology Integration",
+      "description": "Integrated multiple logistics systems including ERP, GPS tracking, and customs software into one unified platform."
+    }
+  ]
+}
+
 };
 
 export default function ProjectPage({ params }) {
-  const project = projects[params.id ];
+  const project = projects[params.id];
 
   if (!project) {
     notFound();
@@ -190,7 +230,7 @@ export default function ProjectPage({ params }) {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-white/20 text-white hover:bg-white/10 text-lg h-12 px-8"
+                className="border-white/20 text-black hover:bg-white/10 text-lg h-12 px-8"
               >
                 Project Details
               </Button>

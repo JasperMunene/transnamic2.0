@@ -121,7 +121,7 @@ export default function QuotePage() {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Name "
                     required
                   />
                 </div>
@@ -308,7 +308,7 @@ export default function QuotePage() {
                   </p>
                   <p className="flex items-center gap-2">
                     <Mail className="w-4 h-4" />
-                    <span>quotes@transnamic.com</span>
+                    <span>info@transnamic.co.ke</span>
                   </p>
                 </div>
               </div>
